@@ -1,0 +1,100 @@
+<section class="content">
+    <div class="content-block">
+        <div class="block-header">
+            <app-breadcrumb [title]="'Cash-Flow Statement'" [items]="['Financial Reports']"
+                [active_item]="'Cash-Flow Statement'">
+            </app-breadcrumb>
+        </div>
+
+        <!-- start of widgets -->
+        <!-- <div class="row clearfix row m-t-25">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="info-box7 bg-emtech order-info-box7"
+                                    style="background-color: #dd1212; color: #fff;">
+                                    <div class="info-box7-block">
+                                        <h4 class="m-b-20">Cash Generated from other Operating Activities</h4>
+                                        <h2 class="text-end"><span class="float-start"></span></h2>
+                                        <p class="m-b-0">KSH 200,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="info-box7 bg-emtech order-info-box7"
+                                    style="background-color: #dd1212; color: #fff;">
+                                    <div class="info-box7-block">
+                                        <h4 class="m-b-20">Net Cash utilised in Investing Activities</h4>
+                                        <h2 class="text-end"><span class="float-start"></span></h2>
+                                        <p class="m-b-0">KSH 50,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="info-box7 bg-emtech order-info-box7"
+                                    style="background-color: #dd1212; color: #fff;">
+                                    <div class="info-box7-block">
+                                        <h4 class="m-b-20">Net Cash generated from Financing Activities</h4>
+                                        <h2 class="text-end"><span class="float-start"></span></h2>
+                                        <p class="m-b-0">KSH 150,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- end of widgets -->
+
+        <!-- cashflow data -->
+        <div class="card-cash">
+            <div class="card">
+                <div class="cash-flow-statement">
+                    <h2>Cash Flow Statement for the reporting Period Ended 31st December, 2023 </h2>
+                    <br>
+                    <div *ngFor="let section of ['operations', 'investments', 'financing', 'increment']">
+                        <h3>{{ section | titlecase }}</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>2023 Rm</th>
+                                    <th>Restated 2022 Rm</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of cashFlowData[section].details">
+                                    <td>{{ item.description }}</td>
+                                    <!-- <td>{{ item.amount | currency }}</td> -->
+                                    <td>{{ item.amount }}</td>
+                                    <td>{{item.previousamt}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- <p>Net Cash: {{ cashFlowData[section].netCash | currency }}</p> -->
+                    </div>
+                    <!-- <h3>Net Increase in Cash</h3>
+                    <p>{{ cashFlowData.netIncreaseInCash | currency }}</p>
+                    <h3>Opening Cash and Cash Equivalents</h3>
+                    <p>{{ cashFlowData.openingCash | currency }}</p>
+                    <h3>Closing Cash and Cash Equivalents</h3>
+                    <p>{{ cashFlowData.closingCash | currency }}</p> -->
+                </div>
+            </div>
+        </div>
+        <!-- endof cashflow data -->
+
+        <div class="buttons">
+            <button id="DownloadBtn">Download</button>
+
+            <button class="edit" (click)="downloadcashflowstatement()">EDIT
+                STATEMENT</button>
+
+            <button class="download" (click)="downloadcashflowstatement()">DOWNLOAD STATEMENT</button>
+        </div>
+
+    </div>
+</section>

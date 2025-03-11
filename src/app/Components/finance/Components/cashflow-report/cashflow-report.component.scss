@@ -1,0 +1,84 @@
+// /* cash-flow-statement.component.css */
+// .table {
+//     width: 100%;
+//     border-collapse: collapse;
+// }
+
+// .table th,
+// .table td {
+//     border: 1px solid #ddd;
+//     padding: 8px;
+//     text-align: left;
+// }
+
+// .table th {
+//     background-color: #f2f2f2;
+//     color: black;
+// }
+
+
+// .buttons {
+//     display: flex;
+//     flex-direction: row;
+//     gap: 50px;
+//     margin-bottom: 30px;
+//     align-items: center;
+//     justify-items: center;
+// }
+
+.buttons {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download,
+.edit {
+    background-color: rgb(36, 36, 160);
+    // font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.card-cash {
+    // width: 80%;
+}
+
+.cash-flow-statement {
+    width: 100%;
+    // max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #dd1212;
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    color: black;
+}

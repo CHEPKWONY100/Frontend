@@ -1,0 +1,38 @@
+.user-list {
+    width: 80%; // Changed from a fixed max-width to a percentage width
+    margin: 0 auto; // Centers the table horizontally
+   }
+   
+   table {
+    width: 100%; // Ensures the table takes up the full width of its container
+    border-collapse: collapse; // Ensures borders are collapsed into a single border
+   }
+   
+   th, td {
+    padding: 10px;
+    border: 1px solid #ddd; // Sets a border around each cell
+   }
+   
+   th {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd; // Ensures the header cells have borders as well
+   }
+   
+   button {
+    margin-right: 5px;
+    background-color: #007bff; // Example styling for buttons
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+   }
+   
+   button:hover {
+    background-color: #0069d9; // Example hover effect for buttons
+   }
+   

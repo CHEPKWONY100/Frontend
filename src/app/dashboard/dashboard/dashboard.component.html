@@ -1,0 +1,47 @@
+<section class="content">
+  <div class="content-block">
+    <!-- Breadcrumb -->
+    <div class="block-header">
+      <app-breadcrumb [title]="'Home Page'" [items]="['Dashboard']" [active_item]="'Home Page'"></app-breadcrumb>
+    </div>
+
+    <!-- Main Card -->
+    <div class="card dashboard-card">
+      <!-- Upper Card: Welcome Note and Assignment Explanation -->
+      <div class="welcome-card">
+        <h1>Welcome to Your Dashboard</h1>
+        <p class="welcome-text">
+          This application is a submission for the Savannah Informatics Quality Assurance Engineer role. It showcases a web application built with Angular, consuming data from the JSONPlaceholder API. Explore users, albums, and photos through the sections below. The app includes manual testing, test automation with Cypress, API testing, and performance testing with k6, demonstrating technical skills, logic, and QA expertise.
+        </p>
+      </div>
+
+      <!-- Lower Card: Counts -->
+      <div class="counts-card">
+        <h2>Explore the Data</h2>
+        <div *ngIf="loading" class="loading">
+          <p>Loading counts... Please wait.</p>
+        </div>
+        <div *ngIf="!loading" class="counts-grid">
+          <!-- Users Count -->
+          <div class="count-item">
+            <h3 (click)="navigateToUsers()" class="clickable-header">Click to view Users</h3>
+            <p class="count">{{ userCount }}</p>
+            <p>View all users and their details.</p>
+          </div>
+          <!-- Albums Count -->
+          <div class="count-item">
+            <h3 (click)="navigateToAlbums()" class="clickable-header"> Click to view Albums</h3>
+            <p class="count">{{ albumCount }}</p>
+            <p>Explore albums created by users.</p>
+          </div>
+          <!-- Photos Count -->
+          <div class="count-item">
+            <h3 (click)="navigateToPhotos()" class="clickable-header">Click to view Photos</h3>
+            <p class="count">{{ photoCount }}</p>
+            <p>Browse photos across albums.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
