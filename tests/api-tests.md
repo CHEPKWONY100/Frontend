@@ -38,7 +38,18 @@
 - **Actual Result**: Returns 404 Not Found.
 - **Status**: Pass
 
----
+# Bug Report - March 07, 2025
+
+## Bug 001 - Login Page Refresh
+- Description: After entering valid credentials and clicking "Login," the page refreshes without logging in.
+- Steps to Reproduce:
+  1. Navigate to /login.
+  2. Enter username: testuser, password: password123.
+  3. Click Login.
+- Expected Result: User logged in, redirected to /home.
+- Actual Result: Page refreshes, no login occurs.
+- Severity: High
+- Status: Open
 
 # Notes
 - API tests were validated using Postman.
