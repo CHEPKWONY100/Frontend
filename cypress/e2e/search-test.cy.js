@@ -1,6 +1,12 @@
 describe('Login and Search Flow', () => {
   beforeEach(() => {
     cy.clearLocalStorage();
+    cy.setLocalStorage('auth-user', JSON.stringify({
+      id: 1,
+      email: 'liamlisa15@gmail.com',
+      roles: ['ROLE_ADMIN'],
+      token: 'mock-token',
+    }));
     cy.visit('http://localhost:4200/authentication/signin');
   });
 
@@ -22,10 +28,9 @@ describe('Login and Search Flow', () => {
 
     cy.intercept('GET', 'https://jsonplaceholder.typicode.com/photos').as('getPhotos');
     cy.visit('http://localhost:4200/dashboard/pages/photos');
-    cy.url().should('include', '/dashboard/pages/photos', { timeout: 15000 }); // Check navigation
+    cy.url().should('include', '/dashboard/pages/photos', { timeout: 15000 });
     cy.wait('@getPhotos', { requestTimeout: 10000, responseTimeout: 10000 });
 
-    // Wait for loading spinner to disappear
     cy.get('mat-progress-spinner', { timeout: 30000 }).should('not.exist');
 
     cy.url().then((url) => {
