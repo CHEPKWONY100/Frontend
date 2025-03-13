@@ -1,8 +1,7 @@
 {
   "name": "kuber",
   "version": "1.0.0",
-  "type": "module", 
-
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve ",
@@ -95,6 +94,9 @@
     "babel-jest": "^29.7.0",
     "codelyzer": "^6.0.2",
     "cypress": "^14.1.0",
+    "cypress-localstorage-commands": "^2.2.7",
+    "cypress-network-idle": "^1.15.0",
+    "cypress-wait-until": "^3.0.2",
     "del": "^6.0.0",
     "install": "^0.13.0",
     "jasmine-core": "~3.10.1",
